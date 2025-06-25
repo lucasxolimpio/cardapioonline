@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seu Cardapio Online </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .scrolling-text {
+      animation: scroll-left 20s linear infinite;
+    }
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+  </style>
+</head>
+<body class="bg-[#fdfaf6] text-[#3c2f2f] font-sans">
+
+  <!-- HERO SECTION -->
+  <section class="relative h-screen bg-cover bg-center flex items-center justify-center text-center px-4" style="background-image: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/40"></div>
+    <div class="relative z-10 text-white max-w-2xl">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6">ONDE O CAFÉ TEM SOTAQUE E O ENCONTRO TEM ALMA.</h1>
+      <a href="#menu" class="inline-block bg-[#d6a05e] text-white font-semibold py-3 px-6 rounded-full hover:bg-[#b67e3e] transition">Ver Cardápio ☕</a>
+    </div>
+  </section>
+
+  <!-- HEADER WITH CART -->
+  <div class="sticky top-0 z-40 bg-white shadow-md flex justify-between items-center px-6 py-4 border-b border-gray-200">
+    <div class="overflow-x-auto whitespace-nowrap flex gap-6">
+    <a href="#salgados" class="tab-link text-[#3c2f2f] font-semibold hover:text-[#b67e3e]">Salgados</a>
+    <a href="#doces" class="tab-link text-[#3c2f2f] font-semibold hover:text-[#b67e3e]">Doces</a>
+    <a href="#guloseimas" class="tab-link text-[#3c2f2f] font-semibold hover:text-[#b67e3e]">Guloseimas</a>
+    <a href="#bebidasquentes" class="tab-link text-[#3c2f2f] font-semibold hover:text-[#b67e3e]">Bebidas Quentes</a>
+    <a href="#bebidasfrias" class="tab-link text-[#3c2f2f] font-semibold hover:text-[#b67e3e]">Bebidas Frias</a>
+    <a href="#crepes" class="tab-link text-[#3c2f2f] font-semibold hover:text-[#b67e3e]">Crepes</a>
+    </div>
+    <button id="cart-button" class="ml-4 relative">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+      </svg>
+      <span id="cart-count" class="absolute -top-2 -right-2 bg-[#d6a05e] text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+    </button>
+  </div>
+
+  <!-- MENU SECTION -->
+  <section id="menu" class="py-16 px-4 max-w-6xl mx-auto scroll-mt-20">
+    
+    <div id="salgados" class="pt-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Salgados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Croissant salgado</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Folhado</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Empanada</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Empada</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Quiche</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 14,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Pão queijo Tradicional</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 6,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Pão queijo Recheado salgado/doce</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Sanduíche natural</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 55,00 kg</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Sanduíche (tipo x)</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Torta fria de frango</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 55,00 kg</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Mini Pizza</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 14,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Rap 10</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 14,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Coxinha</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Salada Proteica</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 15,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Pão com manteiga na chapa</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Pão com presunto e mussarela</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Pão com queijo</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+    
+    <div id="doces" class="pt-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Doces</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Croissant doce</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Bolo</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Bolo no pote</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Brigadeiro no Pote</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Mousse</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 6,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Mousse de chocolate</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Salada de frutas</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Torta de bolacha</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Copo com Frutas</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Gelatina</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Iorgurte Natural com Frutas</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 13,00</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+    
+    <div id="guloseimas" class="pt-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Guloseimas</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Bala</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 0,25</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Bombom</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 2,50</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Chocolates</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Halls - Trident</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 4,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Paçoca</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 1,50</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Pirulito</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 1,50</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+    
+    <div id="bebidasquentes" class="pt-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Bebidas Quentes</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Café passado preto</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Café Longo</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 6,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Café curto</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Café com Leite</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Cappuccino</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Mocatino</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Chocolate Quente</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Chás</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+    
+    <div id="bebidasfrias" class="pt-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Bebidas Frias</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Água com ou sem gás</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 6,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Energético</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 15,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Guaraná de açaí</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 6,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">H2O</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Power- Gatorade</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 8,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Refrigerante Normal</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 6,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Suco de caixinha</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Suco Natural</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Suco Lata</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 6,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Toddy ou Nescau</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 5,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Yopro</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Soda italiana</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Vitamina/Batida de Frutas</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 10,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Shake Expresso/Pré treino</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 14,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Milke Shape/ Pós treino</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 16,00</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+    
+    <div id="crepes" class="pt-16 scroll-mt-20">
+      <h2 class="text-3xl font-bold text-center mb-12">Crepes</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Crepes Salgado e Doce</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Muçarela e Tomate</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Muçarela, Frango e Tomate</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Muçarela, Presunto e Tomate</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Creme de avelã e Banana</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-lg shadow hover:shadow-lg transition overflow-hidden">
+  <div class="p-4">
+    <h3 class="text-xl font-semibold">Creme de avelã e Morango</h3>
+    <p class="text-[#b67e3e] font-bold mt-2">R$ 12,00</p>
+  </div>
+</div>
+
+      </div>
+    </div>
+    
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="fixed bottom-0 left-0 w-full bg-[#3c2f2f] text-white py-3 px-4 flex items-center justify-between z-50">
+    <div class="overflow-hidden w-full mr-4">
+      <div class="scrolling-text whitespace-nowrap text-sm text-[#f5deb3] font-semibold">
+        AQUI O AROMA TE CHAMA, E O SABOR TE CONQUISTA!!! AQUI O AROMA TE CHAMA, E O SABOR TE CONQUISTA!!!
+      </div>
+    </div>
+    <div class="flex items-center gap-2 whitespace-nowrap">
+      <span class="text-[#f5deb3] font-semibold">Siga-nos:</span>
+      <a href="https://www.instagram.com/seu_cardapio_/" target="_blank" class="bg-[#E1306C] hover:bg-[#c1275d] text-white p-2 rounded-full transition">
+        <svg fill="currentColor" class="w-5 h-5" viewBox="0 0 24 24">
+          <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.3.1 2.2.3 2.7.5.6.2 1.1.6 1.6 1.1.5.5.9 1 .9 1.6.2.5.4 1.4.5 2.7.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.3-.3 2.2-.5 2.7-.2.6-.6 1.1-1.1 1.6-.5.5-1 .9-1.6.9-.5.2-1.4.4-2.7.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.3-.1-2.2-.3-2.7-.5-.6-.2-1.1-.6-1.6-1.1-.5-.5-.9-1-.9-1.6-.2-.5-.4-1.4-.5-2.7-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.3.3-2.2.5-2.7.2-.6.6-1.1 1.1-1.6.5-.5 1-.9 1.6-.9.5-.2 1.4-.4 2.7-.5C8.4 2.2 8.8 2.2 12 2.2M12 0C8.7 0 8.3 0 7 0c-1.4 0-2.4.1-3.2.3-.9.2-1.7.5-2.5 1.1C.7 1.9.1 2.7 0 3.6 0 4.4 0 5.4 0 7v5c0 1.6 0 2.6.1 3.4.1.9.3 1.7.9 2.5.6.8 1.4 1.4 2.2 1.6.8.2 1.8.3 3.2.3 1.4 0 2.4-.1 3.2-.3.9-.2 1.7-.6 2.5-1.2.8-.6 1.4-1.4 1.6-2.2.2-.8.3-1.8.3-3.2V7c0-1.4-.1-2.4-.3-3.2-.2-.9-.6-1.7-1.2-2.5C16.1.7 15.3.1 14.4 0 13.6 0 12.6 0 11 0H7z"/>
+          <path d="M12 5.8c-3.4 0-6.2 2.8-6.2 6.2 0 3.4 2.8 6.2 6.2 6.2 3.4 0 6.2-2.8 6.2-6.2 0-3.4-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/>
+          <circle cx="18.5" cy="5.5" r="1.5"/>
+        </svg>
+      </a>
+      <span class="text-[#f5deb3] font-medium hidden sm:inline">@Seu_Cardapio_</span>
+    </div>
+  </footer>
+
+  <!-- CART MODAL -->
+  <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+    <div class="absolute bottom-0 left-0 right-0 bg-white rounded-t-3xl p-6 max-h-[80vh] overflow-y-auto">
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-xl font-bold">Seu Pedido</h3>
+        <button id="close-cart" class="text-gray-500 hover:text-gray-700">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <div id="cart-items" class="mb-6">
+        <!-- Cart items will be added here dynamically -->
+      </div>
+      
+      <div class="border-t border-gray-200 pt-4 mb-6">
+        <div class="flex justify-between font-bold text-lg mb-6">
+          <span>Total:</span>
+          <span id="cart-total">R$ 0,00</span>
+        </div>
+        <button id="checkout-btn" class="w-full bg-[#d6a05e] text-white font-semibold py-3 px-6 rounded-full hover:bg-[#b67e3e] transition">
+          Finalizar Pedido via WhatsApp
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Cart functionality
+    let cart = [];
+    const cartButton = document.getElementById('cart-button');
+    const cartModal = document.getElementById('cart-modal');
+    const closeCart = document.getElementById('close-cart');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    const cartCount = document.getElementById('cart-count');
+    const checkoutBtn = document.getElementById('checkout-btn');
+
+    // Toggle cart modal
+    cartButton.addEventListener('click', () => cartModal.classList.remove('hidden'));
+    closeCart.addEventListener('click', () => cartModal.classList.add('hidden'));
+
+    // Add to cart buttons
+    document.querySelectorAll('.bg-white.rounded-lg').forEach(item => {
+      const addButton = document.createElement('button');
+      addButton.className = 'mt-2 bg-[#d6a05e] text-white text-sm font-semibold py-1 px-3 rounded-full hover:bg-[#b67e3e] transition';
+      addButton.textContent = 'Adicionar';
+      
+      addButton.addEventListener('click', () => {
+        const name = item.querySelector('h3').textContent;
+        const price = item.querySelector('p').textContent.replace('R$ ', '').replace(',', '.');
+        
+        // Check if item already in cart
+        const existingItem = cart.find(i => i.name === name);
+        if (existingItem) {
+          existingItem.quantity++;
+        } else {
+          cart.push({
+            name,
+            price: parseFloat(price),
+            quantity: 1
+          });
+        }
+        
+        updateCart();
+      });
+      
+      item.querySelector('.p-4').appendChild(addButton);
+    });
+
+    // Update cart UI
+    function updateCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+      
+      cart.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        
+        const itemElement = document.createElement('div');
+        itemElement.className = 'flex justify-between items-center py-3 border-b border-gray-100';
+        itemElement.innerHTML = `
+          <div>
+            <h4 class="font-medium">${item.name}</h4>
+            <p class="text-sm text-gray-500">R$ ${item.price.toFixed(2).replace('.', ',')}</p>
+          </div>
+          <div class="flex items-center">
+            <button class="decrease-item px-2 text-gray-500 hover:text-gray-700" data-index="${index}">-</button>
+            <span class="mx-2">${item.quantity}</span>
+            <button class="increase-item px-2 text-gray-500 hover:text-gray-700" data-index="${index}">+</button>
+            <button class="remove-item ml-4 text-red-500 hover:text-red-700" data-index="${index}">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              </svg>
+            </button>
+          </div>
+        `;
+        
+        cartItems.appendChild(itemElement);
+      });
+      
+      // Update total and count
+      cartTotal.textContent = `R$ ${total.toFixed(2).replace('.', ',')}`;
+      const itemCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+      cartCount.textContent = itemCount;
+      cartCount.classList.toggle('hidden', itemCount === 0);
+      
+      // Add event listeners to new buttons
+      document.querySelectorAll('.decrease-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = e.target.getAttribute('data-index');
+          if (cart[index].quantity > 1) {
+            cart[index].quantity--;
+          } else {
+            cart.splice(index, 1);
+          }
+          updateCart();
+        });
+      });
+      
+      document.querySelectorAll('.increase-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = e.target.getAttribute('data-index');
+          cart[index].quantity++;
+          updateCart();
+        });
+      });
+      
+      document.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const index = e.target.getAttribute('data-index');
+          cart.splice(index, 1);
+          updateCart();
+        });
+      });
+    }
+
+    // WhatsApp checkout
+    checkoutBtn.addEventListener('click', () => {
+      if (cart.length === 0) return;
+      
+      let message = 'Olá, gostaria de fazer o seguinte pedido:\n\n';
+      let total = 0;
+      
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        message += `${item.quantity}x ${item.name} - R$ ${itemTotal.toFixed(2).replace('.', ',')}\n`;
+      });
+      
+      message += `\n*Total: R$ ${total.toFixed(2).replace('.', ',')}*`;
+      message += '\n\nPor favor, confirme o pedido. Obrigado!';
+      
+      const phoneNumber = 'SEU_NUMERO_DE_TELEFONE'; // Replace with your WhatsApp number
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+      
+      // Clear cart after checkout
+      cart = [];
+      updateCart();
+      cartModal.classList.add('hidden');
+    });
+  </script>
+</body>
+</html>
